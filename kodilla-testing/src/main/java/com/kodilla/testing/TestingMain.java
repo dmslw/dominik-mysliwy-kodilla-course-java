@@ -1,39 +1,59 @@
 package com.kodilla.testing;
-import com.kodilla.testing.user.SimpleUser;
 import com.kodilla.testing.calculator.Calculator;
+import com.kodilla.testing.user.SimpleUser;
+
+import java.util.Scanner;
+
 
 public class TestingMain {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SimpleUser simpleUser = new SimpleUser("theForumUser");
 
         String result = simpleUser.getUsername();
-
         if (result.equals("theForumUser")){
             System.out.println("test OK");
         } else {
             System.out.println("Error!");
         }
+        Calculator operationObject = new Calculator();
 
-        System.out.println("Test - pierwszy test jednostkowy:");
+        double userInput;
+        double userInput1;
+        int userChoice;
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please Enter The First Number: ");
+        userInput1 = input.nextDouble();
+        System.out.print("Please Enter The Second Number: ");
+        userInput = input.nextDouble();
+        System.out.println("Please Select Operation to Perform:");
+        System.out.println("1-Addition");
+        System.out.println("2-Subtraction");
 
-        Calculator calculator = new Calculator(1, 2);
+        userChoice = input.nextInt();
 
-        int result1 = calculator.addAToB();
-        int result2 = calculator.subtractAFromB();
+        switch (userChoice){
+            case 1:
+                System.out.println(operationObject.addition(userInput, userInput1));
+                break;
+            case 2:
+                System.out.println(operationObject.subtraction(userInput, userInput1));
+                break;
+            default:
+                System.out.print("Test Error! operator is not correct");
 
-        if (result1 == 3){
-            System.out.println("test OK");
+
         }
-        if (result2 == 3){
-            System.out.println("test drugiej metody OK");
 
-        } else {
 
-            System.out.println("error!");
-        }
-        
-            
-        }
+
     }
+
+
+        }
+
+
+
+
+
 

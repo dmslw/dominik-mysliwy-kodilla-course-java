@@ -1,20 +1,15 @@
 package com.kodilla.testing.calculator;
 
-public class Calculator {
-    private int a;
-    private int b;
 
-    public Calculator(int a, int b){
+public class Calculator{
 
-        this.a = a;
-        this.b = b;
+    public double addition(double fnum, double snum ){
+        return fnum+snum;
     }
-    public int addAToB() {
-        return a + b;
+    public double subtraction(double fnum, double snum ){
+        return fnum-snum;
     }
 
-    public int subtractAFromB() {
-        return a - b;
     }
 
-}
+
